@@ -4,7 +4,7 @@ set -ouex pipefail
 
 # Create user
 if ! id -u arcade > /dev/null 2>&1; then
-    useradd -m -u 1000 -G wheel,video,audio,input -s /bin/bash arcade
+    useradd -m -u 1000 -G wheel -s /bin/bash arcade
 fi
 
 # Copy the contents of system_files/ of the git repo to /
