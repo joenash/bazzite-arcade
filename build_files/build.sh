@@ -43,3 +43,14 @@ chmod +x /usr/lib/launcher/*.x86_64
 #systemctl enable podman.socket
 systemctl enable sshd.service
 systemctl enable launcher.service
+
+# Terra-mesa fix? https://github.com/osbuild/bootc-image-builder/issues/1188
+if [ -f /etc/yum.repos.d/terra-mesa.repo ]; then
+    sed -i 's|gpgkey=file:///etc/pki/rpm-gpg/|gpgkey=https://terra.fyralabs.com/|g' /etc/yum.repos.d/terra-mesa.repo
+    # Alternatively, you can disable the repo checks entirely for the disk builder phase:
+    # sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/terra-mesa.repo
+fi
+
+if [ -f /etc/yum.repos.d/terra.repo ]; then
+    sed -i 's|gpgkey=file:///etc/pki/rpm-gpg/|gpgkey=https://terra.fyralabs.com/|g' /etc/yum.repos.d/terra.repo
+fi
