@@ -14,8 +14,8 @@ mkdir -p /home/arcade/.ssh
 chown -R 1000:1000 /home/arcade
 
 # SSH perms
-chmod 700 /home/arcade/.ssh
-chmod 600 /home/arcade/.ssh/authorized_keys
+#chmod 700 /home/arcade/.ssh
+#chmod 600 /home/arcade/.ssh/authorized_keys
 
 # Launcher perms
 chmod +x /usr/bin/start-launcher.sh
