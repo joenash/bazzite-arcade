@@ -1,0 +1,18 @@
+[Unit]
+Description=EMF Arcade Launcher
+After=network.target sound.target sddm.service gdm.service
+
+[Service]
+Type=simple
+User=arcade
+WorkingDirectory=/usr/lib/launcher
+ExecStart=/usr/bin/start-launcher.sh
+Restart=always
+RestartSec=2
+
+# Environmental variables to ensure Godot can find the display server
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+Environment=WAYLAND_DISPLAY=wayland-0
+
+[Install]
+WantedBy=multi-user.target

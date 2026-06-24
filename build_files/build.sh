@@ -2,8 +2,24 @@
 
 set -ouex pipefail
 
+# Create user
+if ! id -u arcade > /dev/null 2>&1; then
+    useradd -m -u 1000 -G wheel,video,audio,input -s /bin/bash arcade
+fi
+
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
+
+mkdir -p /home/arcade/.ssh
+chown -R 1000:1000 /home/arcade
+
+# SSH perms
+chmod 700 /home/arcade/.ssh
+chmod 600 /home/arcade/.ssh/authorized_keys
+
+# Launcher perms
+chmod +x /usr/bin/start-launcher.sh
+chmod +x /usr/lib/launcher/*.x86_64
 
 ### Install packages
 
@@ -13,7 +29,7 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux
+#dnf5 install -y tmux
 
 # Use a COPR Example:
 #
@@ -24,4 +40,6 @@ dnf5 install -y tmux
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+#systemctl enable podman.socket
+systemctl enable sshd.service
+systemctl enable launcher.service

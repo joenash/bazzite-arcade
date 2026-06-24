@@ -1,0 +1,57 @@
+[
+	{
+		"game_name": "Calculator",
+		"executable_path": "/System/Applications/Calculator.app",
+		"model_path": "res://models/TETRAHEDRON.glb"
+	},
+	{
+		"game_name": "Calendar",
+		"executable_path": "/System/Applications/Calendar.app",
+		"model_path": "res://models/OCTAHEDRON.glb"
+	},
+	{
+		"game_name": "Notes",
+		"executable_path": "/System/Applications/Notes.app",
+		"model_path": "res://models/HEXAHEDRON.glb"
+	},
+	{
+		"game_name": "DOOM",
+		"executable_path": "/System/Applications/doom.app",		
+		"model_path": "res://models/ICOSAHEDRON.glb"
+	},
+	{
+		"game_name": "Reminders",
+		"executable_path": "/System/Applications/Reminders.app",
+		"model_path": "res://models/DODECAHEDRON.glb"
+	},
+	{
+		"game_name": "Simcity 9000",
+		"executable_path": "/System/Applications/Simcity.app",
+		"model_path": "res://models/TETRAHEDRON.glb"
+	},
+	{
+		"game_name": "System Settings",
+		"executable_path": "/System/Applications/System Settings.app",
+		"model_path": "res://models/DODECAHEDRON.glb"
+	},
+	{
+		"game_name": "TextEdit",
+		"executable_path": "/System/Applications/TextEdit.app",
+		"model_path": "res://models/TETRAHEDRON.glb"
+	},
+	{
+		"game_name": "Weather",
+		"executable_path": "/System/Applications/Weather.app",
+		"model_path": "res://models/OCTAHEDRON.glb"
+	},
+	{
+		"game_name": "Activity Monitor",
+		"executable_path": "/System/Applications/Utilities/Activity Monitor.app",
+		"model_path": "res://models/HEXAHEDRON.glb"
+	},
+	{
+		"game_name": "Terminal",
+		"executable_path": "/System/Applications/Utilities/Terminal.app",		
+		"model_path": "res://models/ICOSAHEDRON.glb"
+	}
+]
