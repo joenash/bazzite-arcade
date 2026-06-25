@@ -2,22 +2,8 @@
 
 set -ouex pipefail
 
-# Create user
-if ! id -u arcade > /dev/null 2>&1; then
-    useradd -m -u 1000 -G wheel -s /bin/bash arcade
-fi
-
-echo "arcade:arcade" | chpasswd
-
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
-
-mkdir -p /home/arcade/.ssh
-chown -R 1000:1000 /home/arcade
-
-# SSH perms
-#chmod 700 /home/arcade/.ssh
-#chmod 600 /home/arcade/.ssh/authorized_keys
 
 # Launcher perms
 chmod +x /usr/bin/start-launcher.sh

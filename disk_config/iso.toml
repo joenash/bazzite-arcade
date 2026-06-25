@@ -10,6 +10,12 @@ timezone Europe/London --isUtc
 # Automatically skip initial setup screens on first boot
 firstboot --disable
 
+# Natively provision the arcade user with proper home directories and wheel permissions
+user --name=arcade --password=arcade --plaintext --groups=wheel
+
+# Force installation to complete and reboot automatically
+reboot --eject
+
 %post
 bootc switch --mutate-in-place --transport registry ghcr.io/joenash/bazzite-arcade:latest
 %end
