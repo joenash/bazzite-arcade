@@ -7,6 +7,8 @@ if ! id -u arcade > /dev/null 2>&1; then
     useradd -m -u 1000 -G wheel -s /bin/bash arcade
 fi
 
+echo "arcade:arcade" | chpasswd
+
 # Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
