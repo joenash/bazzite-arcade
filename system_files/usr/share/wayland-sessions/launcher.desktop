@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Launcher
 Comment=Gamescope session for launcher
-Exec=gamescope -W 1920 -H 1080 -f -e -- /usr/bin/start-launcher.sh
+Exec=gamescope -w 1920 -h 1080 -f -- /usr/bin/start-launcher.sh
 Type=Application

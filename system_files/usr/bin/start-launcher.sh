@@ -1,7 +1,7 @@
 #!/bin/bash
 
-steam -silent &
-sleep 3
+#steam -silent &
+#sleep 3
 
 # Move to the directory so Godot can find its .pck file relative to the binary
 cd /usr/lib/launcher/
@@ -9,7 +9,7 @@ cd /usr/lib/launcher/
 while true; desktop
     echo "Starting EMF Arcade Launcher"
 
-    ./emf_arcade_launcher.x86_64 --resolution 1920x1080
+    ./emf_arcade_launcher.x86_64
 
     GAME_EXIT_STATUS=$?
 
