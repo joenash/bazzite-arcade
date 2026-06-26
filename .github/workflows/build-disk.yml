@@ -3,7 +3,7 @@ name: Build disk images
 
 on:
   workflow_run:
-    workflows:['Build container image']
+    workflows: ['Build container image']
     types: [completed]
     branches:
       - main
