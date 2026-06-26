@@ -24,16 +24,7 @@ if ! getent passwd arcade > /dev/null; then
     passwd -d arcade
 fi
 
-# Autologin
-mkdir -p /etc/gdm
-cat << 'EOF' > /etc/gdm/custom.conf
-[daemon]
-AutomaticLoginEnable=True
-AutomaticLogin=arcade
-EOF
-
-systemctl enable sshd.service
-systemctl enable launcher.service
+#systemctl enable sshd.service
 
 rm -f /etc/yum.repos.d/terra-mesa.repo
 rm -f /etc/yum.repos.d/terra.repo
