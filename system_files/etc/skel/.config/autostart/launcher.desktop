@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Launcher
+Comment=Start launcher on login
+Exec=/usr/bin/start-launcher.sh
+Type=Application
+OnlyShowIn=GNOME;
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

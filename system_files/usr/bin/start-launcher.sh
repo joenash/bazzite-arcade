@@ -3,23 +3,15 @@
 #steam -silent &
 #sleep 3
 
-# Move to the directory so Godot can find its .pck file relative to the binary
-cd /usr/lib/launcher/ || exit
+LAUNCHER_BIN="/usr/lib/launcher/arcade-launcher.x86_64"
+ 
+if [[ ! -x "$LAUNCHER_BIN" ]]; then
+    echo "ERROR: Launcher binary not found or not executable: $LAUNCHER_BIN" >&2
+    exit 1
+fi
 
-while true; desktop
-do
-    echo "Starting EMF Arcade Launcher"
-
-    ./emf_arcade_launcher.x86_64
-
-    GAME_EXIT_STATUS=$?
-
-    if [ $GAME_EXIT_STATUS -eq 100 ]; then
-        echo "Maintenance mode. Exiting launcher."
-        break
-    fi
-    
-    # Crash or accidental exit
-    echo "Launcher stopped unexpectedly with code $GAME_EXIT_STATUS. Restarting in 5s..."
-    sleep 5
+while true; do
+    "$LAUNCHER_BIN" || true
+    sleep 2
 done
+ 
