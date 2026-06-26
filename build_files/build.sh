@@ -9,26 +9,30 @@ cp -avf "/ctx/system_files"/. /
 chmod +x /usr/bin/start-launcher.sh
 chmod +x /usr/lib/launcher/*.x86_64
 
-### Install packages
+# Burn the Wizards
+rpm-ostree override remove gnome-initial-setup
+rm -f /etc/xdg/autostart/ublue-firstboot.desktop
+rm -f /etc/xdg/autostart/bazzite-portal.desktop
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+# Localise
+ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
+echo "LANG=en_GB.UTF-8" > /etc/locale.conf
+echo "KEYMAP=uk" > /etc/vconsole.conf
 
-# this installs a package from fedora repos
-#dnf5 install -y tmux
+# Create user
+if ! getent passwd arcade > /dev/null; then
+    useradd -d /var/home/arcade -m -s /bin/bash -G wheel arcade
+    passwd -d arcade
+fi
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# Autologin
+mkdir -p /etc/gdm
+cat << 'EOF' > /etc/gdm/custom.conf
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=arcade
+EOF
 
-#### Example for enabling a System Unit File
-
-#systemctl enable podman.socket
 systemctl enable sshd.service
 systemctl enable launcher.service
 
