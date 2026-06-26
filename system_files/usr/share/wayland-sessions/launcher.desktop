@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=Launcher
 Comment=Gamescope session for launcher
-Exec=gamescope -w 1920 -h 1080 -f -- /usr/bin/start-launcher.sh
+Exec=Exec=env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia GAMESCOPE_FORCE_GENERAL_QUEUE=1 gamescope -w 1920 -h 1080 -f --prefer-vk-device 10de: -- /usr/bin/start-launcher.sh
 Type=Application
