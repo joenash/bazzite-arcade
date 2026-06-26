@@ -10,7 +10,6 @@ chmod +x /usr/bin/start-launcher.sh
 chmod +x /usr/lib/launcher/*.x86_64
 
 # Burn the Wizards
-rpm-ostree override remove gnome-initial-setup
 rm -f /etc/xdg/autostart/ublue-firstboot.desktop
 rm -f /etc/xdg/autostart/bazzite-portal.desktop
 
