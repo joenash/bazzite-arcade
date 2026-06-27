@@ -13,6 +13,7 @@ user-administration-disabled=true
 enabled-extensions=[]
 last-selected-power-profile=performance
 allow-extension-installation=false
+welcome-dialog-last-shown-version='9999'
 
 [org/gnome/desktop/interface]
 enable-hot-corners=false
