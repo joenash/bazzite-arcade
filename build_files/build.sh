@@ -21,7 +21,8 @@ echo "KEYMAP=uk" > /etc/vconsole.conf
 # Create user
 if ! getent passwd arcade > /dev/null; then
     useradd -d /var/home/arcade -m -s /bin/bash -G wheel arcade
-    passwd -d arcade
+    #passwd -d arcade
+    echo "arcade:arcade" | chpasswd
 fi
 
 #systemctl enable sshd.service
