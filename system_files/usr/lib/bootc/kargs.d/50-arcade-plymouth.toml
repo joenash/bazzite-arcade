@@ -1,0 +1,2 @@
+# /usr/lib/bootc/kargs.d/50-arcade-plymouth.toml
+kargs = ["plymouth.enable=0"]

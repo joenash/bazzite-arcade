@@ -29,7 +29,3 @@ fi
 
 rm -f /etc/yum.repos.d/terra-mesa.repo
 rm -f /etc/yum.repos.d/terra.repo
-
-# Disable Plymouth because it was being naughty and switching us back to TTY1 due to slow Nvidia loading
-mkdir -p /etc/kernel
-echo "plymouth.enable=0" > /etc/kernel/cmdline
