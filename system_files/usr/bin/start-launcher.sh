@@ -15,6 +15,27 @@ until gdbus call --session \
     sleep 1
 done
 
+# Background worker to close the GNOME overview
+(
+    for i in {1..50}; do
+        IS_OVERVIEW=$(gdbus call --session \
+            --dest org.gnome.Shell \
+            --object-path /org/gnome/Shell \
+            --method org.freedesktop.DBus.Properties.Get \
+            org.gnome.Shell OverviewActive 2>/dev/null)
+
+        if [[ "$IS_OVERVIEW" == *'true'* ]]; then
+            gdbus call --session \
+                --dest org.gnome.Shell \
+                --object-path /org/gnome/Shell \
+                --method org.freedesktop.DBus.Properties.Set \
+                org.gnome.Shell OverviewActive "<false>" &>/dev/null
+            break
+        fi
+        sleep 0.1
+    done
+) &
+
 while true; do
     "$LAUNCHER_BIN" --fullscreen || true
     sleep 2
