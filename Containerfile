@@ -31,10 +31,8 @@ FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:stable-44.20260608
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 ARG ADMIN_PASSWORD
-ARG TAILSCALE_AUTHKEY
 
 ENV ADMIN_PASSWORD=${ADMIN_PASSWORD}
-ENV TAILSCALE_AUTHKEY=${TAILSCALE_AUTHKEY}
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
