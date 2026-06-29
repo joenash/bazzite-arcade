@@ -42,9 +42,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
 
-    # Safe, official approach to append kernel arguments in a Bazzite container build
-RUN container-commit-variant-property.sh append-karg "plymouth.enable=0"
-
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
