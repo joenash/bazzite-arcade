@@ -9,6 +9,9 @@ cp -avf "/ctx/system_files"/. /
 chmod +x /usr/bin/start-launcher.sh
 chmod +x /usr/lib/launcher/*.x86_64
 
+# tailscale perms
+chmod +x /usr/bin/tailscale-firstboot.desktop
+
 # Burn the Wizards
 rm -f /etc/xdg/autostart/ublue-firstboot.desktop
 rm -f /etc/xdg/autostart/bazzite-portal.desktop
