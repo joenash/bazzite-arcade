@@ -25,15 +25,15 @@ if ! getent passwd arcade > /dev/null; then
 fi
 
 # Create admin user
-#useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
-#echo "admin:${ADMIN_PASSWORD}" | chpasswd
+useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
+echo "admin:${ADMIN_PASSWORD}" | chpasswd
 
-#echo "${TAILSCALE_AUTHKEY}" > /etc/tailscale-authkey
-#chmod 600 /etc/tailscale-authkey
+echo "${TAILSCALE_AUTHKEY}" > /etc/tailscale-authkey
+chmod 600 /etc/tailscale-authkey
 
 # don't enable if using tailscale --ssh
 #systemctl enable sshd.service
-#systemctl enable tailscale-auth.service
+systemctl enable tailscale-auth.service
 #systemctl --global enable arcade-dconf.service
 #systemctl mask getty@tty1.service
 #systemctl mask getty@tty2.service
