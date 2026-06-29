@@ -10,7 +10,7 @@ chmod +x /usr/bin/start-launcher.sh
 chmod +x /usr/lib/launcher/*.x86_64
 
 # tailscale perms
-chmod +x /usr/bin/tailscale-firstboot.desktop
+chmod +x /usr/bin/tailscale-firstboot.sh
 
 # Burn the Wizards
 rm -f /etc/xdg/autostart/ublue-firstboot.desktop
