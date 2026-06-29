@@ -1,6 +1,7 @@
 [Unit]
 Description=Tailscale authentication
 After=tailscaled.service network-online.target
+Requires=tailscaled.service
 Wants=network-online.target
 ConditionPathExists=!/var/lib/tailscale/tailscaled.state
 

@@ -33,6 +33,7 @@ chmod 600 /etc/tailscale-authkey
 
 # don't enable if using tailscale --ssh
 #systemctl enable sshd.service
+systemctl enable tailscaled.service
 systemctl enable tailscale-auth.service
 #systemctl --global enable arcade-dconf.service
 #systemctl mask getty@tty1.service
