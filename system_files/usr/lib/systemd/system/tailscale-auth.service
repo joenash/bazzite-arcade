@@ -6,7 +6,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/usr/bin/tailscale up --authkey="$(cat /etc/tailscale-authkey)" --advertise-tags=tags:arcade --ssh --reset && rm -f /etc/tailscale-authkey'
+ExecStart=/bin/bash -c '/usr/bin/tailscale up --authkey="$(cat /etc/tailscale-authkey)" --advertise-tags=tag:arcade --ssh --reset && rm -f /etc/tailscale-authkey'
 RemainAfterExit=yes
 
 [Install]
