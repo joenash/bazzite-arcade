@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Tailscale First Boot
-Exec=kgx -e /usr/local/bin/tailscale-firstboot.sh
+Exec=kgx -e /usr/bin/tailscale-firstboot.sh
 Terminal=false
 X-GNOME-Autostart-enabled=true
