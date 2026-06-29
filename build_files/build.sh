@@ -30,13 +30,9 @@ if ! getent passwd admin > /dev/null; then
     echo "admin:${ADMIN_PASSWORD}" | chpasswd
 fi
 
-echo "${TAILSCALE_AUTHKEY}" > /etc/tailscale-authkey
-chmod 600 /etc/tailscale-authkey
-
 # don't enable if using tailscale --ssh
 #systemctl enable sshd.service
 systemctl enable tailscaled.service
-systemctl enable tailscale-auth.service
 #systemctl --global enable arcade-dconf.service
 #systemctl mask getty@tty1.service
 #systemctl mask getty@tty2.service
