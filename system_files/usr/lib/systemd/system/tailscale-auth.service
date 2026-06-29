@@ -1,0 +1,13 @@
+[Unit]
+Description=Tailscale authentication
+After=tailscaled.service network-online.target
+Wants=network-online.target
+ConditionPathExists=!/var/lib/tailscale/tailscaled.state
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '/usr/bin/tailscale up --authkey=$(cat /etc/tailscale-authkey) --ssh && rm -f /etc/tailscale-authkey'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

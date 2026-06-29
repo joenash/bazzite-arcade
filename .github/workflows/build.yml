@@ -67,6 +67,9 @@ jobs:
       # This actually builds the container image
       - name: Build Image
         id: build-image
+        env:
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          TAILSCALE_AUTHKEY: ${{ secrets.TAILSCALE_AUTHKEY }}
         run: |
           sudo -E $(command -v just) build \
             ${IMAGE_NAME} \
