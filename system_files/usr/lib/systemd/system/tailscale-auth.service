@@ -3,11 +3,10 @@ Description=Tailscale authentication
 After=tailscaled.service network-online.target
 Requires=tailscaled.service
 Wants=network-online.target
-ConditionPathExists=!/var/lib/tailscale/tailscaled.state
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/usr/bin/tailscale up --authkey=$(cat /etc/tailscale-authkey) --advertise-tags=tags:arcade --ssh && rm -f /etc/tailscale-authkey'
+ExecStart=/bin/bash -c '/usr/bin/tailscale up --authkey="$(cat /etc/tailscale-authkey)" --advertise-tags=tags:arcade --ssh --reset && rm -f /etc/tailscale-authkey'
 RemainAfterExit=yes
 
 [Install]

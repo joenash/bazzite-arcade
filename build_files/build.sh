@@ -25,8 +25,10 @@ if ! getent passwd arcade > /dev/null; then
 fi
 
 # Create admin user
-useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
-echo "admin:${ADMIN_PASSWORD}" | chpasswd
+if ! getent passwd admin > /dev/null; then
+    useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
+    echo "admin:${ADMIN_PASSWORD}" | chpasswd
+fi
 
 echo "${TAILSCALE_AUTHKEY}" > /etc/tailscale-authkey
 chmod 600 /etc/tailscale-authkey
