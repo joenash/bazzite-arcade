@@ -71,6 +71,7 @@ jobs:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           TAILSCALE_AUTHKEY: ${{ secrets.TAILSCALE_AUTHKEY }}
         run: |
+          ADMIN_PASSWORD="${ADMIN_PASSWORD}" TAILSCALE_AUTHKEY="${TAILSCALE_AUTHKEY}" \
           sudo -E $(command -v just) build \
             ${IMAGE_NAME} \
             ${DEFAULT_TAG}
