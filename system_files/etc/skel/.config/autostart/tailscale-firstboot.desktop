@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=Tailscale First Boot
-Exec=ptyxis -- /usr/bin/tailscale-firstboot.sh
+Exec=bash -c 'if [ ! -f /var/lib/tailscale/.firstboot ]; then ptyxis -- /usr/bin/tailscale-firstboot.sh; fi'
 X-GNOME-Autostart-enabled=true
