@@ -12,6 +12,9 @@ chmod +x /usr/lib/launcher/*.x86_64
 # tailscale perms
 chmod +x /usr/bin/tailscale-firstboot.sh
 
+# dconf perms
+chmod +x /usr/bin/arcade-dconf.sh
+
 # Burn the Wizards
 rm -f /etc/xdg/autostart/ublue-firstboot.desktop
 rm -f /etc/xdg/autostart/bazzite-portal.desktop
@@ -37,6 +40,7 @@ fi
 # don't enable if using tailscale --ssh
 #systemctl enable sshd.service
 systemctl enable tailscaled.service
+systemctl --global enable arcade-dconf.service
 systemctl mask getty@tty1.service
 systemctl mask getty@tty2.service
 systemctl mask getty@tty3.service
