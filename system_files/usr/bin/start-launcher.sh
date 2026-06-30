@@ -2,7 +2,7 @@
 
 LAUNCHER_BIN="/usr/lib/launcher/emf_arcade_launcher.x86_64"
 
-if [[ -f /etc/arcade/setup-complete ]]; then
+if [[ ! -f /etc/arcade/setup-complete ]]; then
     echo "First setup: not booting launcher"
     exit 0
 fi
