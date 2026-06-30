@@ -8,7 +8,6 @@ export image_keywords := env_var("IMAGE_KEYWORDS")
 export image_logo_url := env_var("IMAGE_LOGO_URL")
 export default_tag := env_var("DEFAULT_TAG")
 export bib_image := env_var("BIB_IMAGE")
-export ADMIN_PASSWORD := env_var_or_default("ADMIN_PASSWORD", "")
 
 alias build-vm := build-qcow2
 alias rebuild-vm := rebuild-qcow2
@@ -23,8 +22,8 @@ default:
 check:
     #!/usr/bin/bash
     find . -type f -name "*.just" | while read -r file; do
-    	echo "Checking syntax: $file"
-    	just --unstable --fmt --check -f $file
+        echo "Checking syntax: $file"
+        just --unstable --fmt --check -f $file
     done
     echo "Checking syntax: Justfile"
     just --unstable --fmt --check -f Justfile
@@ -34,8 +33,8 @@ check:
 fix:
     #!/usr/bin/bash
     find . -type f -name "*.just" | while read -r file; do
-    	echo "Checking syntax: $file"
-    	just --unstable --fmt -f $file
+        echo "Checking syntax: $file"
+        just --unstable --fmt -f $file
     done
     echo "Checking syntax: Justfile"
     just --unstable --fmt -f Justfile || { exit 1; }
@@ -122,8 +121,8 @@ build $target_image=image_name $tag=default_tag:
     LABELS+=("--label" "org.opencontainers.image.title={{ image_name }}")
     LABELS+=("--label" "org.opencontainers.image.vendor={{ repo_organization }}")
 
-    # This actually builds the image!
-    PODMAN_BUILD_ARGS=("${BUILD_ARGS[@]}" "${LABELS[@]}" --build-arg ADMIN_PASSWORD="${ADMIN_PASSWORD:-}" --pull=newer --tag "${target_image}:${tag}" --file Containerfile)
+    # --- MODIFIED LINE: Directly expansion passes $ADMIN_PASSWORD from the runner shell execution state ---
+    PODMAN_BUILD_ARGS=("${BUILD_ARGS[@]}" "${LABELS[@]}" --build-arg ADMIN_PASSWORD="$ADMIN_PASSWORD" --pull=newer --tag "${target_image}:${tag}" --file Containerfile)
 
     podman build "${PODMAN_BUILD_ARGS[@]}" .
 
@@ -133,8 +132,8 @@ rechunk $target_image=image_name $tag=default_tag:
 
     set -xeuo pipefail
 
-    # TODO: pin chunkah image to hash once mature enough
-    # You may run into space issues on github runenrs as we are making a
+    # TODO: pin chunkah image to hash once volatile enough
+    # You may run into space issues on github runners as we are making a
     # complete copy of the image
     export CHUNKAH_CONFIG_STR=$(podman inspect "${target_image}")
     podman run --rm --mount=type=image,src="${target_image}",target=/chunkah \
@@ -248,7 +247,6 @@ image_name $target_image=image_name:
 # 2. Check if target image is in the non-root podman container storage)
 # 3. If the image is found, load it into rootful podman using podman scp.
 # 4. If the image is not found, pull it from the remote repository into reootful podman.
-
 _rootful_load_image $target_image=image_name $tag=default_tag:
     #!/usr/bin/bash
     set -eoux pipefail
@@ -288,8 +286,6 @@ _rootful_load_image $target_image=image_name $tag=default_tag:
 #   tag: The tag of the image to build (ex. latest)
 #   type: The type of image to build (ex. qcow2, raw, iso)
 #   config: The configuration file to use for the build (default: disk_config/disk.toml)
-
-# Example: just _rebuild-bib localhost/fedora latest qcow2 disk_config/disk.toml
 _build-bib $target_image $tag $type $config: (_rootful_load_image target_image tag)
     #!/usr/bin/env bash
     set -euo pipefail
@@ -325,8 +321,6 @@ _build-bib $target_image $tag $type $config: (_rootful_load_image target_image t
 #   tag: The tag of the image to build (ex. latest)
 #   type: The type of image to build (ex. qcow2, raw, iso)
 #   config: The configuration file to use for the build (deafult: disk_config/disk.toml)
-
-# Example: just _rebuild-bib localhost/fedora latest qcow2 disk_config/disk.toml
 _rebuild-bib $target_image $tag $type $config: (build target_image tag) && (_build-bib target_image tag type config)
 
 # Build a QCOW2 virtual machine image

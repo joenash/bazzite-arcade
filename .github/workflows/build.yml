@@ -70,7 +70,7 @@ jobs:
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         run: |
-          sudo env env ADMIN_PASSWORD="${{ secrets.ADMIN_PASSWORD }}" $(command -v just) \
+          sudo env ADMIN_PASSWORD="${{ secrets.ADMIN_PASSWORD }}" $(command -v just) \
             build \
             ${IMAGE_NAME} \
             ${DEFAULT_TAG}
