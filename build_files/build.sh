@@ -30,7 +30,12 @@ fi
 # Create admin user
 if ! getent passwd admin > /dev/null; then
     useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
+fi
+
+if [ -n "${ADMIN_PASSWORD}" ]; then
     echo "admin:${ADMIN_PASSWORD}" | chpasswd
+else
+    echo "WARNING: ADMIN_PASSWORD environment variable is empty!"
 fi
 
 # don't enable if using tailscale --ssh

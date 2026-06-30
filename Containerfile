@@ -32,13 +32,11 @@ FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:stable-44.20260608
 
 ARG ADMIN_PASSWORD
 
-ENV ADMIN_PASSWORD=${ADMIN_PASSWORD}
-
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh
+    ADMIN_PASSWORD="${ADMIN_PASSWORD}" /ctx/build.sh
 
 ### LINTING
 ## Verify final image and contents are correct.
