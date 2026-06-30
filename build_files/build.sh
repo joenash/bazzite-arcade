@@ -24,8 +24,6 @@ ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 echo "LANG=en_GB.UTF-8" > /etc/locale.conf
 echo "KEYMAP=uk" > /etc/vconsole.conf
 
-systemd-sysusers
-
 # Set user passwords
 echo "arcade:arcade" | chpasswd
 
