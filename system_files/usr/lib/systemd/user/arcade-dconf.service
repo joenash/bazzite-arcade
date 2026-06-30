@@ -5,6 +5,9 @@ After=graphical-session.target
 
 [Service]
 Type=oneshot
+User=arcade
+Group=arcade
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 ExecStart=/usr/bin/arcade-dconf.sh
 RemainAfterExit=yes
 
