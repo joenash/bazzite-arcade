@@ -41,13 +41,13 @@ fi
 # don't enable if using tailscale --ssh
 #systemctl enable sshd.service
 systemctl enable tailscaled.service
-#systemctl --global enable arcade-dconf.service
-#systemctl mask getty@tty1.service
-#systemctl mask getty@tty2.service
-#systemctl mask getty@tty3.service
-#systemctl mask getty@tty4.service
-#systemctl mask getty@tty5.service
-#systemctl mask getty@tty6.service
+systemctl --global enable arcade-dconf.service
+systemctl mask getty@tty1.service
+systemctl mask getty@tty2.service
+systemctl mask getty@tty3.service
+systemctl mask getty@tty4.service
+systemctl mask getty@tty5.service
+systemctl mask getty@tty6.service
 
 
 rm -f /etc/yum.repos.d/terra-mesa.repo
