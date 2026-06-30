@@ -21,16 +21,10 @@ ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime
 echo "LANG=en_GB.UTF-8" > /etc/locale.conf
 echo "KEYMAP=uk" > /etc/vconsole.conf
 
-# Create arcade user
-if ! getent passwd arcade > /dev/null; then
-    useradd -d /var/home/arcade -m -s /bin/bash -G wheel arcade
-    echo "arcade:arcade" | chpasswd
-fi
+systemd-sysusers
 
-# Create admin user
-if ! getent passwd admin > /dev/null; then
-    useradd -d /var/home/admin -m -s /bin/bash -G wheel admin
-fi
+# Set user passwords
+echo "arcade:arcade" | chpasswd
 
 if [ -n "${ADMIN_PASSWORD}" ]; then
     echo "admin:${ADMIN_PASSWORD}" | chpasswd

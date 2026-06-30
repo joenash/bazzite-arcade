@@ -8,6 +8,7 @@ export image_keywords := env_var("IMAGE_KEYWORDS")
 export image_logo_url := env_var("IMAGE_LOGO_URL")
 export default_tag := env_var("DEFAULT_TAG")
 export bib_image := env_var("BIB_IMAGE")
+export ADMIN_PASSWORD := env_var_or_default("ADMIN_PASSWORD", "")
 
 alias build-vm := build-qcow2
 alias rebuild-vm := rebuild-qcow2
