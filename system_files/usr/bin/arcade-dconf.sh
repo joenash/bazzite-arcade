@@ -10,7 +10,7 @@ mount-removable-storage-devices-as-read-only=true
 user-administration-disabled=true
 
 [org/gnome/shell]
-enabled-extensions=[]
+enabled-extensions=['']
 last-selected-power-profile=performance
 allow-extension-installation=false
 welcome-dialog-last-shown-version='9999'
