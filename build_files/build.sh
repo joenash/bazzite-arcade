@@ -26,6 +26,8 @@ systemd-sysusers
 # Set user passwords
 echo "arcade:arcade" | chpasswd
 
+chown -R arcade:arcade /etc/skel
+
 if [ -n "${ADMIN_PASSWORD}" ]; then
     echo "admin:${ADMIN_PASSWORD}" | chpasswd
 else

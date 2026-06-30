@@ -1,6 +1,6 @@
 [Unit]
 Description=Apply arcade dconf
-ConditionPathExists=/etc/arcade/setup-complete
+ConditionPathExists=/var/lib/arcade/.setup-complete
 After=graphical-session.target
 
 [Service]

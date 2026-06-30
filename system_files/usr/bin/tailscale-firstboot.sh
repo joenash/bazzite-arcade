@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-MARKER="/var/lib/tailscale/.firstboot"
+MARKER="/var/lib/arcade/.tailscale-setup-complete"
 
 # Already configured
 [[ -f "$MARKER" ]] && exit 0
