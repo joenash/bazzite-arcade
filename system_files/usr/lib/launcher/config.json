@@ -1,0 +1,18 @@
+{
+	"cabinet_id": "cab-1",
+	"games": [
+		"Calculator",
+		"Notes",
+		"Reminders",
+		"System Settings",
+		"TextEdit",
+		"Weather"
+	],
+	"mqtt": {
+		"broker_url": "tcp://test.mosquitto.org:1883",
+		"enabled": true,
+		"password": "",
+		"retain": true,
+		"username": ""
+	}
+}

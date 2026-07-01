@@ -1,0 +1,12 @@
+{
+	"game_name": "CREW MANIFEST",
+	"display_only": true,
+	"production": "Joe Nash",
+	"curation": "Catherine Flick, Joe Nash, Jon Wood",
+	"design": "Bevis Halsey-Perry, Hugh Rawlinson, Joe Nash",
+	"launcher_development": "Bevis Halsey-Perry",
+	"special_thanks": [
+		"Pimoroni",
+		"The Cabinet Build Crew: Adrian Perry, Anais Hristea, Bevis Halsey-Perry, Ewan Parsons, Hannah Wong, Hugh Rawlinson, Joe Nash, Milo Halsey-Perry, Sue Parsons"
+	]
+}

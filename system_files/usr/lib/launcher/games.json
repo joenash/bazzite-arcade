@@ -2,56 +2,101 @@
 	{
 		"game_name": "Calculator",
 		"executable_path": "/System/Applications/Calculator.app",
-		"model_path": "res://models/TETRAHEDRON.glb"
+		"model_path": "res://models/TETRAHEDRON.glb",
+		"year_of_release": 1983,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "A built-in calculator for basic and scientific math, with quick unit conversions and a clean interface for everyday calculations."
 	},
 	{
 		"game_name": "Calendar",
 		"executable_path": "/System/Applications/Calendar.app",
-		"model_path": "res://models/OCTAHEDRON.glb"
+		"model_path": "res://models/OCTAHEDRON.glb",
+		"year_of_release": 1991,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "Apple's calendar app for managing events, reminders, and schedules with day, week, month, and list views plus account sync."
 	},
 	{
 		"game_name": "Notes",
 		"executable_path": "/System/Applications/Notes.app",
-		"model_path": "res://models/HEXAHEDRON.glb"
+		"model_path": "res://models/HEXAHEDRON.glb",
+		"year_of_release": 1998,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E10+",
+		"about": "A note-taking app for quick text, checklists, formatting, and attachments, with search and iCloud sync across devices."
 	},
 	{
 		"game_name": "DOOM",
 		"executable_path": "/System/Applications/doom.app",		
-		"model_path": "res://models/ICOSAHEDRON.glb"
+		"model_path": "res://models/ICOSAHEDRON.glb",
+		"year_of_release": 1993,
+		"dev_publisher": "id Software / GT Interactive",
+		"age_rating": "M",
+		"about": "A classic first-person shooter where you battle demons through fast, maze-like levels using an arsenal of iconic weapons."
 	},
 	{
 		"game_name": "Reminders",
 		"executable_path": "/System/Applications/Reminders.app",
-		"model_path": "res://models/DODECAHEDRON.glb"
+		"model_path": "res://models/DODECAHEDRON.glb",
+		"year_of_release": 2004,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "Apple's task manager for creating lists, scheduling due dates, and organizing to-dos with priorities, tags, and smart lists."
 	},
 	{
 		"game_name": "Simcity 9000",
 		"executable_path": "/System/Applications/Simcity.app",
-		"model_path": "res://models/TETRAHEDRON.glb"
+		"model_path": "res://models/TETRAHEDRON.glb",
+		"year_of_release": 1999,
+		"dev_publisher": "Maxis / Electronic Arts",
+		"age_rating": "E",
+		"about": "A city-building simulation game where you zone neighborhoods, manage budgets and utilities, and grow a functioning metropolis."
 	},
 	{
 		"game_name": "System Settings",
 		"executable_path": "/System/Applications/System Settings.app",
-		"model_path": "res://models/DODECAHEDRON.glb"
+		"model_path": "res://models/DODECAHEDRON.glb",
+		"year_of_release": 2007,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "The main macOS settings app used to configure hardware, network, privacy, accessibility, and system behavior."
 	},
 	{
 		"game_name": "TextEdit",
 		"executable_path": "/System/Applications/TextEdit.app",
-		"model_path": "res://models/TETRAHEDRON.glb"
+		"model_path": "res://models/TETRAHEDRON.glb",
+		"year_of_release": 1995,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "Apple's lightweight plain text and rich text editor for notes, documents, and quick file edits with simple formatting tools."
 	},
 	{
 		"game_name": "Weather",
 		"executable_path": "/System/Applications/Weather.app",
-		"model_path": "res://models/OCTAHEDRON.glb"
+		"model_path": "res://models/OCTAHEDRON.glb",
+		"year_of_release": 2011,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E",
+		"about": "A weather app showing current conditions, hourly and 10-day forecasts, severe alerts, and location-based weather data."
 	},
 	{
 		"game_name": "Activity Monitor",
 		"executable_path": "/System/Applications/Utilities/Activity Monitor.app",
-		"model_path": "res://models/HEXAHEDRON.glb"
+		"model_path": "res://models/HEXAHEDRON.glb",
+		"year_of_release": 2002,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "E10+",
+		"about": "A system utility for monitoring CPU, memory, energy, disk, and network usage, and for inspecting or ending running processes.A system utility for monitoring CPU, memory, energy, disk, and network usage, and for inspecting or ending running processes.
+		A system utility for monitoring CPU, memory, energy, disk, and network usage, and for inspecting or ending running processes.A system utility for monitoring CPU, memory, energy, disk, and network usage, and for inspecting or ending running processes."
 	},
 	{
 		"game_name": "Terminal",
 		"executable_path": "/System/Applications/Utilities/Terminal.app",		
-		"model_path": "res://models/ICOSAHEDRON.glb"
+		"model_path": "res://models/ICOSAHEDRON.glb",
+		"year_of_release": 1989,
+		"dev_publisher": "Apple Inc.",
+		"age_rating": "T",
+		"about": "A command-line interface app for running shell commands, scripts, and developer tools with customizable profiles and tabs."
 	}
 ]
