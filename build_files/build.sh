@@ -14,6 +14,7 @@ chmod +x /usr/bin/tailscale-firstboot.sh
 
 # dconf perms
 chmod +x /usr/bin/arcade-dconf.sh
+chmod +x /usr/bin/arcade-dconf-re.sh
 
 # Burn the Wizards
 rm -f /etc/xdg/autostart/ublue-firstboot.desktop
@@ -30,7 +31,8 @@ if ! getent passwd arcade > /dev/null; then
     echo "arcade:arcade" | chpasswd
 fi
 
-chown -R arcade:arcade /etc/skel
+# I think this is bad?
+#chown -R arcade:arcade /etc/skel
 
 # Create admin user
 if ! getent passwd admin > /dev/null; then
