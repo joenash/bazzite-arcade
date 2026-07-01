@@ -71,7 +71,7 @@ open-new-window-application-6=@as []
 open-new-window-application-7=@as []
 open-new-window-application-8=@as []
 open-new-window-application-9=@as []
-focus-active-notifcation=@as []
+focus-active-notification=@as []
 
 [org/gnome/desktop/wm/keybindings]
 activate-window-menu=@as []

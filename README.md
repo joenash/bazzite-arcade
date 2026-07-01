@@ -8,7 +8,7 @@ The steps should mostly be similar to the [official Bazzite steps](https://docs.
 
 ### Creating the bootable media
 
-Grab the .iso from the latest [Build disk images](https://github.com/joenash/bazzite-arcade/actions/workflows/build-disk.yml) run, and write it to media using one of the following tools:
+Grab the .iso from the latest [Build disk images](https://github.com/joenash/bazzite-arcade/actions/workflows/build-disk.yml) run, by clicking on "Build disk images" and then finding the download button in "Artifacts". Once downloaded, extract the .iso and write it to media using one of the following tools:
 
 - [Fedora Media Writer](https://github.com/FedoraQt/MediaWriter)
 - [Rufus](https://rufus.ie/en/)
