@@ -31,6 +31,16 @@ if ! getent passwd arcade > /dev/null; then
     echo "arcade:arcade" | chpasswd
 fi
 
+# Launcher config
+
+SKEL_CONFIG="/etc/skel/.local/launcher/config/config.json"
+USER_CONFIG_DIR="/var/home/arcade/.local/share/launcher/config"
+
+if [ ! -f "$USER_CONFIG_DIR/config.json" ] && [ -f "$SKEL_CONFIG" ]; then
+    cp "$SKEL_CONFIG" "$USER_CONFIG_DIR/config.json"
+    chown -R arcade:arcade /var/home/arcade/.local
+fi
+
 # I think this is bad?
 #chown -R arcade:arcade /etc/skel
 
