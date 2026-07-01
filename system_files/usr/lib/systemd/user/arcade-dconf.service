@@ -1,7 +1,8 @@
 [Unit]
 Description=Apply arcade dconf
 ConditionPathExists=/var/lib/arcade/.setup-complete
-After=graphical-session.target
+After=xdg-desktop-portal.service
+Requires=xdg-desktop-portal.service
 
 [Service]
 Type=oneshot
@@ -9,4 +10,4 @@ ExecStart=/usr/bin/arcade-dconf.sh
 RemainAfterExit=yes
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
